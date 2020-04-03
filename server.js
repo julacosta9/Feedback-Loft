@@ -1,1 +1,1 @@
-const test = "Test code to see if Travis CI works";
+const travisTest = "Test code to see if Travis CI works";
