@@ -4,11 +4,16 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "tailwindcss": "^1.2.0"
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mysql2": "^2.1.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.21.6"
   },
   "devDependencies": {},
   "scripts": {
-    "build:css": "tailwind build src/style.css -o public/css/style.css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
