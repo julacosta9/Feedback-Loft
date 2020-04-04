@@ -1,0 +1,26 @@
+{
+  "name": "Feedback-Loft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "tailwindcss": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o public/css/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julacosta9/Feedback-Loft.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julacosta9/Feedback-Loft/issues"
+  },
+  "homepage": "https://github.com/julacosta9/Feedback-Loft#readme"
+}
