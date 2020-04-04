@@ -10,4 +10,4 @@ cache:
 script: node ./server.js
 
 before_script:
-  - npm install
+  - npm ci
