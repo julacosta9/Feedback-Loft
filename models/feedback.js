@@ -22,5 +22,5 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     // TODO: Add association to user model and project model
-    return Project;
+    return Feedback;
 };
