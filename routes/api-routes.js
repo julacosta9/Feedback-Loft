@@ -46,4 +46,15 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.post("/api/addProject", function(req, res) {
+    db.Project.create({
+      name: req.body.name,
+      url: req.body.url,
+      description: req.body.description
+    })
+    .then(function(){
+      console.log("project inserted");
+    })
+  });
 };
