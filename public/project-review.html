@@ -146,11 +146,39 @@
                     <h2 class="text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. In tempora, expedita quae id molestias soluta nisi iusto cupiditate corrupti consequatur, corporis, distinctio praesentium. Quas corporis sint atque illo. Cumque, a.</h2>
                     <div class="flex justify-around"></div>
                 </div>
+
+                <!-- <div class="rounded-md text-gray-700 text-center bg-gray-400 px-4 py-2 m-2 w-7/12"> -->
+                    <form class="self-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-7/12">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                            Feedback:
+                            </label>
+                            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="textarea" placeholder="Leave feedback here..."></textarea>
+                        </div>
+                        <div class="mb-6">
+                            <p>Select a rating:</p>
+                            <div class="flex flex-row">
+                                <input type="radio" id="loveIt" name="rating" value="3">
+                                <label for="male">Love it</label><br>
+                                <input type="radio" id="likeIt" name="rating" value="2">
+                                <label for="female">Like it</label><br>
+                                <input type="radio" id="needsWork" name="rating" value="1">
+                                <label for="other">Needs work</label>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                            Submit
+                            </button>
+                        </div>
+                        </form>
+                <!-- </div> -->
+
                 <div class="px-4 py-6 sm:px-0">
                     <div class="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
                 </div>
                 <div class="self-center rounded-md text-gray-700 text-center bg-gray-400 px-4 py-2 m-2 w-1/2">
-                    <h2 class="text-3xl">Recent Feedback Received</h2>
+                    <h2 class="text-3xl">Feedback Received</h2>
                     <div class="text-gray-700 bg-gray-300 px-4 py-2 m-2">
                         <div class="flex justify-between">
                             <h2 class="text-2xl"><strong>Project Name</strong></h2>
