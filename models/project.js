@@ -21,6 +21,20 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    Project.associate = function(models) {
+        // We're saying that a Project should belong to a User
+        // A Project can't be created without a User due to the foreign key constraint
+        Project.belongsTo(models.User, {
+          foreignKey: {
+              allowNull: false,
+              references: {
+                  model: 'Users',
+                  key: 'id'
+              }
+          }
+        });
+       
+    };
     // TODO: Add association to user model
     return Project;
 };

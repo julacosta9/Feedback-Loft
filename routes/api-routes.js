@@ -51,10 +51,12 @@ module.exports = function(app) {
     db.Project.create({
       name: req.body.name,
       url: req.body.url,
-      description: req.body.description
+      description: req.body.description,
+      UserId: req.body.UserId
     })
     .then(function(){
       console.log("project inserted");
+      res.redirect(307, "/members");
     })
   });
 };
