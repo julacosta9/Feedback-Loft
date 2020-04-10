@@ -72,18 +72,19 @@ module.exports = function(app) {
       // res.render("active-project", hbsObject);
     });
   });
+
+  app.get("/api/getProjectAlgo", (req, res) => {
+    db.Project.findAll({
+      where: { 
+        feedback_given: 
+        {
+          $gt: sequelize.col('feedback_received')
+        }
+      },
+      order: ['last_commented', 'DESC']
+    });
+  }).then(data => {
+    res.json(data);
+  });
 };
 
-app.get("/api/getProjectAlgo", (req, res) => {
-  db.Project.findAll({
-    where: { 
-      feedback_given: 
-      {
-        $gt: sequelize.col('feedback_received')
-      }
-    },
-    order: ['last_commented', 'DESC']
-  });
-}).then(data => {
-  res.json(data);
-});
