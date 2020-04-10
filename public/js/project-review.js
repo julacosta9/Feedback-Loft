@@ -1,3 +1,21 @@
+
+  // $.get("/api/getProjectAlgo").then(data => {
+  //   console.log(data);
+  // })
+
+$( document ).ready(function() {
+  $.ajax({
+    crossOrigin: true,
+    type: "GET",
+    crossDomain: false,
+    url: "/api/getProjectAlgo",
+    success: function(data) {
+      console.log(data);
+    }
+  });
+});
+
+
 // Creating array to hold projects
 const projects = [];
 
@@ -59,7 +77,8 @@ const chooseProject = array => {
       return b.lastComment - a.lastComment;
     });
   });
-  const newArr = JSON.stringify(sortedProjects);
+console.log(sortedProjects);
+  const newArr = JSON.stringify(sortedProjects());
   console.log(`Sorted: ${newArr}`);
   return sortedProjects;
 };
