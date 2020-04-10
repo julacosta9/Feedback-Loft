@@ -65,9 +65,11 @@ module.exports = function(app) {
       where: {
         UserId: req.params.id
       }
-    }).then(function(dbPost) {
-      console.log("Projects Received" + dbPost[0].url);
-      res.json(dbPost);
+    }).then(function(dbProject) {
+      var hbsObject = {
+        project: dbProject
+      };
+      // res.render("active-project", hbsObject);
     });
   });
 };
