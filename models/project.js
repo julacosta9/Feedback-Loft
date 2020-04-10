@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: "music",
         },
         url: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         description: {
