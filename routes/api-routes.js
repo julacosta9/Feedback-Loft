@@ -66,10 +66,18 @@ module.exports = function(app) {
         UserId: req.params.id
       }
     }).then(function(dbProject) {
+      
+      var full;
+      if (dbProject.length < 3)
+        full = false;
+      else 
+        full = true;
+
       var hbsObject = {
-        project: dbProject
+        project: dbProject,
+        add: full
       };
-      // res.render("active-project", hbsObject);
+      res.render("dashboard", hbsObject);
     });
   });
 };

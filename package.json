@@ -9,6 +9,8 @@
     "express-handlebars": "^4.0.3",
     "express-session": "^1.17.0",
     "handlebars": "^4.7.6",
+    "handlebars-helper": "0.0.12",
+    "handlebars-helpers": "^0.10.0",
     "mysql2": "^2.1.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
