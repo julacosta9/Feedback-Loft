@@ -29,12 +29,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.engine("handlebars", exphbs({
-    extname: 'exphbs',
-    defaultView: 'default',
-    layoutsDir: __dirname + '/views/pages/',
-    partialsDir: __dirname + '/views/partials/'
-}))
+app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 //Requiring our routes

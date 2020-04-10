@@ -66,10 +66,13 @@ module.exports = function(app) {
         UserId: req.params.id
       }
     }).then(function(dbProject) {
+      
       var hbsObject = {
         project: dbProject
       };
-      // res.render("active-project", hbsObject);
+
+      console.log(hbsObject);
+      res.render("dashboard", hbsObject);
     });
   });
 };
