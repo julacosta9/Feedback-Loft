@@ -19,6 +19,9 @@ module.exports = function (sequelize, DataTypes) {
         description: {
             type: DataTypes.TEXT,
         },
+        last_commented: {
+            type: DataTypes.DATE,
+        },
     });
 
     Project.associate = function (models) {
