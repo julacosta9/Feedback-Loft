@@ -67,10 +67,16 @@ module.exports = function(app) {
       }
     }).then(function(dbProject) {
       
+      var full;
+      if (dbProject.length < 3)
+        full = false;
+      else 
+        full = true;
+
       var hbsObject = {
-        project: dbProject
+        project: dbProject,
+        add: full
       };
-      
       res.render("dashboard", hbsObject);
     });
   });

@@ -6,7 +6,9 @@ $(document).ready(function () {
 
     function getProject(UserId) {
         $.get("/api/getProjects/" + UserId, function (req, res) {})
-            .then(function () {})
+            .then(function () {
+                
+            })
             .catch(function (err) {
                 console.log(err);
             })

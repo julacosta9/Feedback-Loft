@@ -14,8 +14,6 @@ $(document).ready(function() {
 
     $(".submitProject").on("submit", function(event) {
         // Make sure to preventDefault on a submit event.
-        console.log("HI");
-    
         $.get("/api/user_data", function (req, res){
             var newProject = {
                 name: $("#project-title").val().trim(),
@@ -36,11 +34,8 @@ $(document).ready(function() {
             console.log(err);
           });
       }
-    // window.on("click", function(event) {
-    //     if (event.target == modal) {
-    //         modal.attr("style", "display: none");
-    //     }
-    // });
+    
+    
 });
 
 // When the user clicks anywhere outside of the modal, close it
