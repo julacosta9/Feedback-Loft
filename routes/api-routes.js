@@ -82,9 +82,9 @@ module.exports = function(app) {
         }
       },
       order: ['last_commented', 'DESC']
-    });
-  }).then(data => {
+    }).then(data => {
     res.json(data);
+    });
   });
 };
 
