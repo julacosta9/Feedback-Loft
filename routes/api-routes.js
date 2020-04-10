@@ -59,4 +59,15 @@ module.exports = function(app) {
       res.redirect(307, "/members");
     })
   });
+
+  app.get("/api/getProjects/:id", function(req, res) {
+    db.Project.findAll({
+      where: {
+        UserId: req.params.id
+      }
+    }).then(function(dbPost) {
+      console.log("Projects Received" + dbPost[0].url);
+      res.json(dbPost);
+    });
+  });
 };
