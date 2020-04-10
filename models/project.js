@@ -34,6 +34,5 @@ module.exports = function (sequelize, DataTypes) {
             },
         });
     };
-    // TODO: Add association to user model
     return Project;
 };
