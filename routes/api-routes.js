@@ -56,6 +56,7 @@ module.exports = function(app) {
     })
     .then(function(){
       console.log("project inserted");
+      res.redirect("/members");
     })
   });
 
