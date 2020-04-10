@@ -70,8 +70,7 @@ module.exports = function(app) {
       var hbsObject = {
         project: dbProject
       };
-
-      console.log(hbsObject);
+      
       res.render("dashboard", hbsObject);
     });
   });
