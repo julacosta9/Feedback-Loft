@@ -17,11 +17,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    feedback_left: {
+    feedback_given: {
         type: DataTypes.INTEGER,
         allowNull: true
     },
-    feedback_given: {
+    feedback_received: {
         type: DataTypes.INTEGER,
         allowNull: true
     }
