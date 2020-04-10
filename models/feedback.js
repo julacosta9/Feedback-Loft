@@ -21,6 +21,29 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    // TODO: Add association to user model and project model
+    Feedback.associate = function (models) {
+        // We're saying that a piece of feedback should belong to a user and a project
+        // Feedback will always be tied to a user and a project due to the foreign key constraint
+        Feedback.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false,
+                references: {
+                    model: "Users",
+                    key: "id",
+                },
+            },
+        });
+        
+        Feedback.belongsTo(models.Project, {
+            foreignKey: {
+                allowNull: false,
+                references: {
+                    model: "Projects",
+                    key: "id",
+                },
+            },
+        });
+    };
+
     return Feedback;
 };
