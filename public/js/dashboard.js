@@ -13,4 +13,11 @@ $(document).ready(function () {
                 console.log(err);
             })
     };
+
+    $("#feedButton").on("click", function (){
+        $.get("/giveFeedback", function (req, res) {})
+        .catch(function (err) {
+            console.log(err);
+        });
+    })
 });
