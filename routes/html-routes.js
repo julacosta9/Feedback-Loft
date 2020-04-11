@@ -30,4 +30,11 @@ module.exports = function(app) {
     res.redirect("/api/getProjects/" + UserId);
   });
 
+  app.get("/giveFeedback", function(req, res) {
+    // If the user already has an account send them to the members page
+    if (!req.user) {
+      res.redirect("/");
+    }
+    res.render("project-review");
+  });
 };
