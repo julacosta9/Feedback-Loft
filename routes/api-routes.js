@@ -80,4 +80,30 @@ module.exports = function(app) {
       res.render("dashboard", hbsObject);
     });
   });
+
+  app.get("/api/findProjects/:pid", function(req, res) {
+    db.Project.findOne({
+      where: {
+        UserId: req.user.id,
+        id: req.params.pid
+      }
+    }).then(function(dbProject) {
+        res.json(dbProject);
+    });
+  });
+
+  app.get("/api/editProjects/:pid/:ndsc", function(req, res) {
+    db.Project.update(
+      {
+        description: req.params.ndsc},
+      {
+        where: {
+          UserId: req.user.id,
+          id: req.params.pid
+        }
+      }
+    ).then(function(dbProject) {
+        console.log(dbProject);
+    });
+  });
 };

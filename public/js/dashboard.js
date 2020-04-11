@@ -20,4 +20,10 @@ $(document).ready(function () {
             console.log(err);
         });
     })
+
+    // $("#edit").on("click", function (){
+    //     // var header = $("<h3>").text("Current Request:");
+    //     // var request = $("<p>").text()
+
+    // })
 });
