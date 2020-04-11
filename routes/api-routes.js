@@ -92,7 +92,8 @@ module.exports = function (app) {
             ],
             order: [['last_commented', 'ASC']]
         }).then((data) => {
-            res.json(data);
+            res.render("project-review", {message: "hello"})
+            console.log(data[0].dataValues);
         });
     });
 };
