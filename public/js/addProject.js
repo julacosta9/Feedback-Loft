@@ -21,7 +21,11 @@ $(document).ready(function() {
             // Make sure to preventDefault on a submit event.
             var description = $("#newDesc").val().trim();
             $.get(`/api/editProjects/${projectId}/${description}`, function (req, res){
-                
+            })
+        });
+        $(".delete").on("click", function() {
+            // Make sure to preventDefault on a submit event.
+            $.get(`/api/deleteProject/${projectId}`, function (req, res){
             })
         });
     });

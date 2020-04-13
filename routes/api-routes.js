@@ -122,4 +122,14 @@ module.exports = function (app) {
       console.log(dbProject);
     });
   });
+
+  app.get("/api/deleteProject/:id", function (req, res){
+    db.Project.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (project){
+      console.log(project);
+    })
+  });
 };
