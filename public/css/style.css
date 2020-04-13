@@ -67283,3 +67283,8 @@ video {
   text-decoration: none;
   cursor: pointer;
 }
+
+.delete {
+  
+  float: right;
+}

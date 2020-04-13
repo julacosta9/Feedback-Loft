@@ -1,15 +1,38 @@
 $(document).ready(function() {
-    var modal = $(".modal");
-    var span = $(".close");
+    var modal = $("#myModal");
+    var close = $(".close");
+    var review = $("#reviewModal");
+    var edit = $(".edit")
 
     $(".project").on("click", function (){
-        console.log(modal.text());
         modal.attr("style", "display: block");
     });
 
-    span.on("click", function (){
-        console.log(modal.text());
+    edit.on("click", function (){
+        var projectId = $(this).attr("data");
+        $.get(`/api/findProjects/${projectId}`, function (req, res){
+            var text = $("#currentRequest");
+            var desc = $("<p>").text(req.description);
+            text.empty();
+            text.append(desc);
+            review.attr("style", "display: block");
+        });
+        $(".editProject").on("submit", function(event) {
+            // Make sure to preventDefault on a submit event.
+            var description = $("#newDesc").val().trim();
+            $.get(`/api/editProjects/${projectId}/${description}`, function (req, res){
+            })
+        });
+        $(".delete").on("click", function() {
+            // Make sure to preventDefault on a submit event.
+            $.get(`/api/deleteProject/${projectId}`, function (req, res){
+            })
+        });
+    });
+
+    close.on("click", function (){
         modal.attr("style", "display: none");
+        review.attr("style", "display: none");
     });
 
     $(".submitProject").on("submit", function(event) {

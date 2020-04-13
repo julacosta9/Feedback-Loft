@@ -104,7 +104,7 @@
                     <a href="#"
                         class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
                         role="menuitem">Settings</a>
-                    <a href="#"
+                    <a href="/logout"
                         class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
                         role="menuitem">Sign out</a>
                 </div>
@@ -267,6 +267,26 @@
                         <textarea type="text" id="project-feedback" name="feedback"></textarea>
                     </div>
                     <button type="submit" class="btn btn-default">Submit Project</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="reviewModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form class="editProject">
+                    <div class="form-group">
+                        <h2>Current Request:</h2>
+                        <div id = "currentRequest">
+                        </div>
+                        <br>
+                        <label for="projectFeedback">Enter your new feedback description:</label><br>
+                        <textarea type="text" id="newDesc" name="feedback"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Change Feedback</button>
+                    <button type="delete" class="btn btn-default delete">Delete Project</button>
+                        
                 </form>
             </div>
         </div>

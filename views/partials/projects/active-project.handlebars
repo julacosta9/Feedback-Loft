@@ -1,8 +1,11 @@
+
+<div class="rounded-md text-gray-700 text-center bg-gray-400 px-4 py-2 m-2 md:w-3/12" data-id="{{dataValues.UserId}}">
+
 <div class="rounded-md text-gray-700 text-center bg-gray-400 px-4 py-2 m-2 sm:w-11/12 md:w-5/12 xl:w-3/12">
     <h2 class="py-2 font-bold text-xl">{{dataValues.name}}</h2> {{! project title from db will go here }}
     {{{dataValues.url}}} {{! embed link will go into src }}
     <div class="flex justify-around py-4">
-        <button class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 w-2/5">Edit</button>
+        <button data="{{dataValues.id}}" class="edit px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 w-2/5">Edit</button>
         <button class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 w-2/5">View Feedback</button>
     </div>
 </div>
