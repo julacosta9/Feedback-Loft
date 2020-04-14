@@ -1,5 +1,3 @@
-USE passport_demo;
-
 INSERT INTO Users (email, password, feedback_given, feedback_received, createdAt, updatedAt)
 VALUES ("usertest1@gmail.com", "usertest1", 100, 50, "2020-04-11", "2020-04-11"),
 ("usertest2@gmail.com", "usertest2", 10, 10, "2020-04-11", "2020-04-11"),
@@ -20,4 +18,9 @@ VALUES ("2020-04-11", "Feedback comment 1", 3, "2020-04-11", 1, 1),
 ("2020-04-10", "Feedback comment 2", 2,"2020-04-10", 2, 2),
 ("2020-04-09", "Feedback comment 3", 1,"2020-04-09", 3, 3),
 ("2020-04-08", "Feedback comment 4", 3, "2020-04-08", 4, 4),
-("2020-04-07", "Feedback comment 5", 2, "2020-04-07", 5, 5);
+("2020-04-07", "Feedback comment 5", 2, "2020-04-07", 5, 5),
+("2020-04-12", "Feedback comment A", 3, "2020-04-11", 1, 1),
+("2020-04-13", "Feedback comment B", 2,"2020-04-10", 2, 2),
+("2020-04-14", "Feedback comment C", 1,"2020-04-09", 3, 3),
+("2020-04-15", "Feedback comment D", 3, "2020-04-08", 4, 4),
+("2020-04-16", "Feedback comment E", 2, "2020-04-07", 5, 5);

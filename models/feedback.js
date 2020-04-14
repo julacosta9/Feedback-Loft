@@ -33,12 +33,12 @@ module.exports = function (sequelize, DataTypes) {
                 },
             },
         });
-        
+
         Feedback.belongsTo(models.Project, {
             foreignKey: {
                 allowNull: false,
                 references: {
-                    model: "Projects",
+                    model: "Project",
                     key: "id",
                 },
             },
