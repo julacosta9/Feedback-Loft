@@ -54,7 +54,7 @@ module.exports = function (app) {
             order: [["last_commented", "ASC"]],
         }).then((data) => {
             db_project = data[0].dataValues;
-            console.log(db_project);
+            console.log(db_project.id);
 
             db.Feedback.findAll({
                 where: {
@@ -68,7 +68,7 @@ module.exports = function (app) {
                 ],
                 order: [["createdAt", "DESC"]]
             }).then((data) => {
-                db_comments = data[0];
+                db_comments = data;
                 console.log(db_comments);
                 res.render("project-review", {
                     projectData: db_project,

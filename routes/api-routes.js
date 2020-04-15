@@ -132,4 +132,57 @@ module.exports = function (app) {
       console.log(project);
     })
   });
+
+  app.get("/api/deleteProject/:id", function (req, res){
+    db.Feedback.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (project){
+      console.log(project);
+    })
+  });
+
+  app.post("/api/newFeedback", function (req, res){
+    db.Feedback.create({
+      text: req.body.text,
+      rating: req.body.rating,
+      UserId: req.user.id,
+      ProjectId: req.body.ProjectId
+    }).then(function (feedback){
+      res.json(feedback)
+      console.log("Feedback Inserted");
+      // console.log(feedback);
+    })
+  });
+
+  app.put("/api/feedbackGivenUpdate", function (req, res){
+    db.User.update({
+      feedback_given: req.body.feedback_given
+    },
+    {
+      where: {
+        id: req.user.id
+      }
+    }).then(function (User){
+      res.json(User)
+      console.log("Feedback Given Updated");
+      // console.log(User);
+    })
+  });
+
+  app.put("/api/updateLastCommented", function (req, res){
+    db.Project.update({
+      last_commented: req.body.last_commented
+    },
+    {
+      where: {
+        id: req.body.projectId
+      }
+    }).then(function (Project){
+      res.json(Project)
+      console.log("---Last Commented Timestamp Updated---");
+      console.log(Project);
+    })
+  });
 };
