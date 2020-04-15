@@ -127,16 +127,15 @@
     </header>
     <main>
         <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row bg-gray-200 justify-around p-3">
+            <div class="flex flex-col md:flex-row flex-wrap bg-gray-200 justify-around p-3 ">
 
                 {{#each project}}
                 {{> projects/active-project}}
                 {{/each}}
 
                 {{#unless add}}
-                <div class="project rounded-md text-gray-700 text-center bg-gray-400 px-4 py-2 m-2 sm:w-11/12 md:w-5/12 xl:w-3/12">
-                    <div
-                        class="flex flex-col justify-center rounded-md m-auto text-gray-700 bg-gray-300 h-full w-full border-4 border-dashed border-gray-500">
+                <div class="project rounded-md self-center text-gray-700 text-center bg-gray-400 px-4 py-2 m-2 sm:w-11/12 md:w-5/12 xl:w-3/12">
+                    <div class="flex flex-col justify-center rounded-md m-2 text-gray-700 bg-gray-300 h-full w-full border-4 border-dashed border-gray-500">
                         <h2 class="font-bold text-3xl py-1">Create A New Project</h2>
                         <i class="self-center text-5xl fas fa-plus-circle"></i>
                     </div>
