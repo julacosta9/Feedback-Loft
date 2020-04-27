@@ -1,15 +1,12 @@
 $(document).ready(function () {
-    $.get("/api/user_data", function (req, res) {
-        var UserId = req.id;
-        getProject(UserId);
-    });
+    console.log("I'm getting to this script!!")
+    getUserData();
 
-    function getProject(UserId) {
-        $.get("/api/getProjects/" + UserId, function (req, res) {})
-            .then(function () {})
-            .catch(function (err) {
-                console.log(err);
-            });
+    function getUserData() {
+        $.get("/api/user_data", function (req, res) {})
+            .then(data => {
+                console.log(data);
+            })
     }
 
     // $("#feedButton").on("click", function () {
