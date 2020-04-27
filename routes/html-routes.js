@@ -27,7 +27,31 @@ module.exports = function (app) {
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
     app.get("/members", isAuthenticated, function (req, res) {
         var UserId = req.user.id;
-        res.redirect("/api/getProjects/" + UserId);
+        res.redirect("/dashboard");
+    });
+
+    app.get("/dashboard", (req, res) => {
+        if (!req.user) {
+            res.redirect("/");
+        }
+
+        db.Project.findAll({
+            where: {
+                UserId: req.user.id,
+            }
+        })
+        .then(function (dbProject) {
+            var full;
+            if (dbProject.length < 3) full = false;
+            else full = true;
+
+            let hbsObject = {
+                project: dbProject,
+                add: full,
+            }
+
+            res.render("dashboard", hbsObject)
+        }); 
     });
 
     app.get("/giveFeedback", function (req, res) {
@@ -61,12 +85,12 @@ module.exports = function (app) {
                     ProjectId: db_project.id,
                 },
                 include: [
-                  {
-                    model: db.User,
-                    as: "User"
-                  }
+                    {
+                        model: db.User,
+                        as: "User",
+                    },
                 ],
-                order: [["createdAt", "DESC"]]
+                order: [["createdAt", "DESC"]],
             }).then((data) => {
                 db_comments = data;
                 console.log(db_comments);
