@@ -40,9 +40,20 @@ module.exports = function (app) {
     } else {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        id: req.user.id,
+      db.User.findOne({
+        where: {
+          id: req.user.id,
+        }
+      })
+      .then(data => {
+        res.json({
+          id: data.id,
+          email: data.email,
+          feedback_received: data.feedback_received,
+          feedback_given: data.feedback_given,
+          createdAt: data.createdAt,
+          updatedAt: data.updatedAt
+        })
       });
     }
   });
