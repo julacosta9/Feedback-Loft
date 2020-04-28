@@ -200,7 +200,21 @@
                     </div>
                     <div class="rounded-md text-gray-700 text-center bg-gray-400 px-4 py-2 m-2 sm:w-11/12 md:w-2/5 lg:w-7/12">
                         <h2 class="text-3xl py-1">Recent Feedback Given</h2>
+                        {{#each feedbackGivenData}}
                         <div class="text-gray-700 bg-gray-300 p-4 m-4">
+                            <div class="flex justify-between">
+                                <h2 class="text-2xl"><strong>{{dataValues.Project.dataValues.name}}</strong></h2>
+
+
+                            </div>
+                            <div class="text-left">
+                                <h2 class="text-lg">Comment by <u>{{dataValues.User.dataValues.email}}</u></h2>
+                                <p>{{dataValues.text}}
+                                </p>
+                            </div>
+                        </div>
+                        {{/each}}
+                        {{!-- <div class="text-gray-700 bg-gray-300 p-4 m-4">
                             <div class="flex justify-between">
                                 <h2 class="text-2xl"><strong>Project Name</strong></h2>
 
@@ -227,21 +241,7 @@
                                     praesentium ad dolore ea? Animi esse molestias saepe veritatis aut!
                                 </p>
                             </div>
-                        </div>
-                        <div class="text-gray-700 bg-gray-300 p-4 m-4">
-                            <div class="flex justify-between">
-                                <h2 class="text-2xl"><strong>Project Name</strong></h2>
-
-
-                            </div>
-                            <div class="text-left">
-                                <h2 class="text-xl">Owner: <u>Fattyweed420</u></h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quas molestias
-                                    enim esse saepe necessitatibus facilis voluptate doloremque quam aut,
-                                    praesentium ad dolore ea? Animi esse molestias saepe veritatis aut!
-                                </p>
-                            </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
