@@ -1,5 +1,3 @@
-const travisTest = "Test code to see if Travis CI works";
-
 //Requires NPM packages
 var express = require("express");
 var exphbs = require("express-handlebars");
