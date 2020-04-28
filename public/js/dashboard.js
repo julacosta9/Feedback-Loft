@@ -1,12 +1,17 @@
 $(document).ready(function () {
-    console.log("I'm getting to this script!!")
     getUserData();
 
-    function getUserData() {
-        $.get("/api/user_data", function (req, res) {})
-            .then(data => {
-                console.log(data);
-            })
+    async function getUserData() {
+        let userData = await $.get("/api/user_data");
+
+        console.log(userData);
+
+        let feedbackGiven = (userData.feedback_given) ? userData.feedback_given : "0"
+        let feedbackReceived = (userData.feedback_received) ? userData.feedback_received : "0"
+
+        $("#feedback_given").text(feedbackGiven)
+        $("#feedback_received").text(feedbackReceived)
+        $("#username-h1").text(`${userData.email}'s Dashboard`)
     }
 
     // $("#feedButton").on("click", function () {
