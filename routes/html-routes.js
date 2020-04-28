@@ -35,6 +35,8 @@ module.exports = function (app) {
             res.redirect("/");
         }
 
+        let hbsObject
+
         db.Project.findAll({
             where: {
                 UserId: req.user.id,
@@ -45,13 +47,31 @@ module.exports = function (app) {
             if (dbProject.length < 3) full = false;
             else full = true;
 
-            let hbsObject = {
+            hbsObject = {
                 project: dbProject,
                 add: full,
             }
 
-            res.render("dashboard", hbsObject)
-        }); 
+            db.Feedback.findAll({
+                where: {
+                    UserId: req.user.id,
+                },
+                order: [["createdAt", "DESC"]],
+                limit: 5,
+                include: [{
+                    model: db.User,
+                    as: "User"
+                }]
+            })
+            .then(function (db_feedbackGivenData) {
+                console.log(db_feedbackGivenData)
+
+                res.render("dashboard",{
+                    hbsObject: hbsObject,
+                    feedbackGivenData: db_feedbackGivenData
+                })
+            })
+        }) 
     });
 
     app.get("/giveFeedback", function (req, res) {
