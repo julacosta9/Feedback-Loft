@@ -61,9 +61,14 @@ module.exports = function (app) {
                 include: [{
                     model: db.User,
                     as: "User"
+                },
+                {
+                    model: db.Project,
+                    as: "Project"
                 }]
             })
             .then(function (db_feedbackGivenData) {
+                console.log("----------------------")
                 console.log(db_feedbackGivenData)
 
                 res.render("dashboard",{
